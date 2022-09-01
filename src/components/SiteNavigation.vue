@@ -4,13 +4,13 @@
          <router-link :to="{
             name: 'home'
          }">
-            <div class="flex items-center gap-3 flex-1">
+            <div class="flex items-center gap-3">
                <font-awesome-icon icon="fa-solid fa-sun text" class="text-2xl" />
                <p class="text-2xl">The Local Weather</p>
             </div>
          </router-link>
 
-         <div class="flex gap-3">
+         <div class="flex gap-3 flex-1 justify-end">
             <font-awesome-icon icon="fa-solid fa-circle-info" class="text-xl hover:text-weather-secondary duration-150 cursor-pointer"/>
          </div>
       </nav>
