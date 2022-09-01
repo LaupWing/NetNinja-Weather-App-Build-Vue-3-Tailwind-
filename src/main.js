@@ -3,9 +3,10 @@ import App from './App.vue'
 import router from './router'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import {library} from '@fortawesome/fontawesome-svg-core'
-import {faSun} from '@fortawesome/free-solid-svg-icons'
+import {faSun, faCircleInfo} from '@fortawesome/free-solid-svg-icons'
 
 library.add(faSun)
+library.add(faCircleInfo)
 
 import './assets/index.css'
 
