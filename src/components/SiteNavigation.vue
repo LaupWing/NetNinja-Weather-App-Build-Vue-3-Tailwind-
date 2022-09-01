@@ -12,6 +12,7 @@
 
          <div class="flex gap-3 flex-1 justify-end">
             <font-awesome-icon icon="fa-solid fa-circle-info" class="text-xl hover:text-weather-secondary duration-150 cursor-pointer"/>
+            <font-awesome-icon icon="fa-solid fa-plus" class="text-xl hover:text-weather-secondary duration-150 cursor-pointer"/>
          </div>
       </nav>
    </header>
