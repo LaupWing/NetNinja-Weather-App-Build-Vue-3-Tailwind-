@@ -11,12 +11,18 @@
          </router-link>
 
          <div class="flex gap-3 flex-1 justify-end">
-            <font-awesome-icon icon="fa-solid fa-circle-info"
+            <font-awesome-icon 
+               icon="fa-solid fa-circle-info"
+               class="text-xl hover:text-weather-secondary duration-150 cursor-pointer" 
+               @click="toggleModal"
+               />
+               <font-awesome-icon icon="fa-solid fa-plus"
                class="text-xl hover:text-weather-secondary duration-150 cursor-pointer" />
-            <font-awesome-icon icon="fa-solid fa-plus"
-               class="text-xl hover:text-weather-secondary duration-150 cursor-pointer" />
-         </div>
-         <BaseModal>
+            </div>
+         <BaseModal
+            @close-modal="toggleModal"
+            :modal-active="modalActive"
+         >
             <div class="text-black">
                <h1 class="text-2xl mb-1">About:</h1>
                <p class="mb-4">
@@ -53,6 +59,13 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import { RouterLink } from 'vue-router'
 import BaseModal from './BaseModal.vue'
+
+const modalActive = ref(null)
+const toggleModal = ()=>{
+   modalActive.value = !modalActive.value
+}
+
 </script>
