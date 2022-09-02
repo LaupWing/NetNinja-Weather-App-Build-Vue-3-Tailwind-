@@ -1,10 +1,10 @@
 <template>
-   <Transition>
+   <Transition name="modal-outer">
       <div 
          class="fixed bg-black bg-opacity-30 inset-0 flex justify-center px-8"
          v-show="modalActive"
       >
-         <Transition>
+         <Transition name="modal-inner">
             <div 
                class="p-4 bg-white self-start mt-32 max-w-screen-md"
                v-if="modalActive"
@@ -31,3 +31,27 @@ defineProps({
    }
 })
 </script>
+
+<style scoped>
+.modal-outer-enter-active,
+.modal-outer-leave-active {
+  transition: opacity 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02);
+}
+.modal-outer-enter-from,
+.modal-outer-leave-to {
+  opacity: 0;
+}
+.modal-inner-enter-active {
+  transition: all 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02) 0.15s;
+}
+.modal-inner-leave-active {
+  transition: all 0.3s cubic-bezier(0.52, 0.02, 0.19, 1.02);
+}
+.modal-inner-enter-from {
+  opacity: 0;
+  transform: scale(0.8);
+}
+.modal-inner-leave-to {
+  transform: scale(0.8);
+}
+</style>
