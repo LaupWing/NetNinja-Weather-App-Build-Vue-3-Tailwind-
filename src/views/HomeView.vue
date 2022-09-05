@@ -12,13 +12,18 @@
          class="absolute bg-weather-secondary text-white w-full shadow-md py-2 px-1 top-[66px]"
          v-if="mapboxSearchResults"
       >
-         <li
-            v-for="searchResult in mapboxSearchResults"
-            :key="searchResult.id"
-            class="py-2 cursor-pointer"
-         >
-            {{searchResult.place_name}}
-         </li>
+         <p v-if="searchError">Sorry something went wrong, please try again</p>
+         <p v-if="mapboxSearchResults.length === 0">No search results</p>
+         <template v-else>
+
+            <li
+               v-for="searchResult in mapboxSearchResults"
+               :key="searchResult.id"
+               class="py-2 cursor-pointer"
+            >
+               {{searchResult.place_name}}
+            </li>
+         </template>
       </ul>
    </main>
 </template>
